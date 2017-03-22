@@ -2,7 +2,10 @@ version: '2'
 services:
   test:
     build: .
-    command: docker build -t torrent_downloader
+    volumes:
+    - .:/tmp
+    command: bash /tmp/test.sh
+    
     # ports:
     # - "5000:5000"
     # volumes:
