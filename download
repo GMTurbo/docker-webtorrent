@@ -1,0 +1,3 @@
+#!/bin/bash
+docker build -t torrent_downloader .
+docker run -$1 -v ~/Movies:/Movies torrent_downloader $2
