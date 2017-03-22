@@ -1,0 +1,16 @@
+version: '2'
+services:
+  test:
+    build: .
+    command: docker build -t torrent_downloader
+    # ports:
+    # - "5000:5000"
+    # volumes:
+    # - .:/code
+    # - logvolume01:/var/log
+#     links:
+#     - redis
+#   redis:
+#     image: redis
+# volumes:
+#   logvolume01: {}

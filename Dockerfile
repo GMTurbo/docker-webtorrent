@@ -1,5 +1,4 @@
 FROM node
-ENV MAGNET empty
 
 #install webtorrent
 RUN npm install -g webtorrent-cli@latest --save
