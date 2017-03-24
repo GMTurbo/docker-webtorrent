@@ -1,10 +1,13 @@
-import sys
 import os
-import docker
 import argparse
+import docker
+
 
 
 def parse_args():
+    '''
+    meh
+    '''
     parser = argparse.ArgumentParser()
     parser.add_argument('-t', '--torrent', nargs='?', default="", type=str)
     parser.add_argument('-v', '--volume', nargs='?',
@@ -29,18 +32,18 @@ if CONFIG.verbose is True:
 CLIENT = docker.from_env()
 
 if CONFIG.rebuild is True:
-    pwd = os.getenv("PWD")
+    PWD = os.getenv("PWD")
     if CONFIG.verbose is True:
-        print pwd
-    print CLIENT.images.build(path=pwd, tag="torrent_downloader")
+        print PWD
+    print CLIENT.images.build(path=PWD, tag="torrent_downloader")
 
 if CONFIG.verbose is True:
     print "CLIENT.containers.run(\"{i}\", \"{t}\", detach={d},\
 volumes=({v}: ('bind': '/Movies', 'mode': 'rw')".format(
-        i=CONFIG.image,
-        t=CONFIG.torrent,
-        d=CONFIG.detach,
-        v=CONFIG.volume
+    i=CONFIG.image,
+    t=CONFIG.torrent,
+    d=CONFIG.detach,
+    v=CONFIG.volume
 )
 
 print CLIENT.containers.run(
