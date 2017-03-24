@@ -2,8 +2,6 @@ import os
 import argparse
 import docker
 
-
-
 def parse_args():
     '''
     meh
