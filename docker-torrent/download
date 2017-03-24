@@ -1,7 +1,6 @@
 #!/bin/bash
-echo $3
 if [ "$3" == "b" ]; then
     docker build -t torrent_downloader .
 fi
 
-docker run -$1 -v ~/Movies:/Movies torrent_downloader $2
+docker run -$1 --rm -v ~/Movies:/Movies torrent_downloader $2
