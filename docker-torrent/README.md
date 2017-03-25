@@ -33,7 +33,7 @@ oppersurfer.tk%3A6969&tr=udp%3A%2F%2Fpublic.popcorn-tracker.org%3A6969" --verbos
 ```
 
 ```python
-python runner.py --help                                                 gabrieltesta@Gabriels-MacBook-Pro
+python runner.py --help                                          
 usage: runner.py [-h] [-t [TORRENT]] [-v [VOLUME]] [-i [IMAGE]] [-d] [-a]
                  [-rb] [--verbose]
 
