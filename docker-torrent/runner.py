@@ -21,27 +21,30 @@ def parse_args():
     parser.set_defaults(rebuild=False, detach=True, verbose=False)
     return parser.parse_args()
 
+def log(message):
+    '''
+    meh
+    '''
+    if CONFIG.verbose is True:
+        print message
 
 CONFIG = parse_args()
 
-if CONFIG.verbose is True:
-    print CONFIG
+log(CONFIG)
 
 CLIENT = docker.from_env()
 
 if CONFIG.rebuild is True:
     PWD = os.getenv("PWD")
-    if CONFIG.verbose is True:
-        print PWD
+    log(PWD)
     print CLIENT.images.build(path=PWD, tag="torrent_downloader")
 
-if CONFIG.verbose is True:
-    print "CLIENT.containers.run(\"{i}\", \"{t}\", detach={d},\
+log("CLIENT.containers.run(\"{i}\", \"{t}\", detach={d},\
 volumes=({v}: ('bind': '/Movies', 'mode': 'rw')".format(
     i=CONFIG.image,
     t=CONFIG.torrent,
     d=CONFIG.detach,
-    v=CONFIG.volume
+    v=CONFIG.volume)
 )
 
 print CLIENT.containers.run(
