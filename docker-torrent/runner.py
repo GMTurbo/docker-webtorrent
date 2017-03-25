@@ -44,7 +44,8 @@ volumes=({v}: ('bind': '/Movies', 'mode': 'rw')".format(
     i=CONFIG.image,
     t=CONFIG.torrent,
     d=CONFIG.detach,
-    v=CONFIG.volume)
+    v=CONFIG.volume
+    )
 )
 
 print CLIENT.containers.run(
